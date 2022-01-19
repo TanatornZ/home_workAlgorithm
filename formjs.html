@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap" rel="stylesheet">
+    <style>
+        .bg-nav {
+            background: rgb(233, 0, 0);
+            background: radial-gradient(circle, rgba(233, 0, 0, 1) 0%, rgba(75, 76, 78, 1) 100%);
+        }
+
+        .bg {
+            background-image: url('./35370.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 1000px;
+        }
+
+        * {
+            font-family: 'Sarabun', sans-serif;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul class="flex bg-nav">
+        <li>
+            <img class="logo" src="./aven.png" alt="">
+        </li>
+        <li>
+            <a class="p-3 text-white" href="./profile.html">หน้าแรก</a>
+        </li>
+        <li>
+            <a class="p-3 text-white " href="profiletailwind.html">หน้าประวัติส่วนตัวแบบ CSS Framework</a>
+        </li>
+        <li>
+            <a class="p-3 text-white active" href="formjs.html">Form (Js)</a>
+        </li>
+        <li>
+            <a class="p-3 text-white" href="formvue.html">Form (VueJs)</a>
+        </li>
+    </ul>
+    <div class="h-96 relative bg">
+        <div style="z-index:1;" class="absolute bg-black w-full h-full opacity-25"></div>
+        <div class="flex flex-col justify-center items-center h-3/4  ">
+            <h1 class="text-3xl mt-2 text-white z-10">คำนวณการคูณ</h1>
+            <form id="form" class="z-10 mt-4" onsubmit="event.preventDefault(); calculate();">
+                <input required="" id="first" class="rounded-full p-3 ml-2 " type="number" placeholder="number1">
+                <input required="" id="second" class="rounded-full p-3 ml-2 " type="number" placeholder="number2">
+                <button type="submit" class="rounded-full p-3 bg-red-600 text-white w-40 ml-2 ">คำนวณ</button>
+            </form>
+            
+            <h3 class="text-2xl text-white z-10 mt-6">คำตอบ : <span id="result"></span></h3>
+        </div>
+        </div>
+    </div>
+    <script>
+        function calculate(){
+           let first = Number(document.getElementById('first').value);
+           let second =  Number(document.getElementById('second').value);
+           let result = (first*second)
+           alert(`result : ${result}`);
+           document.getElementById('result').innerHTML =  result
+           document.getElementById('form').reset();
+        }
+    </script>
+</body>
+</html>

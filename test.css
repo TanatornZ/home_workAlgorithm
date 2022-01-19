@@ -1,0 +1,38 @@
+html , body{
+   }
+
+.box1{              /*use with class */
+    background-color: aliceblue;
+    width: 300px;
+    margin: 30px;           /* ขยับด้านนอก */
+    padding: 20px;          /* ขยับด้านใน */
+    border-radius: 20px;
+    -webkit-box-shadow: 5px 5px 15px 3px #000000; 
+    box-shadow: 5px 5px 15px 3px #000000;
+}
+
+#box1{        /* use with id */
+
+}
+
+.Text {
+    color: black;
+    
+}
+
+.test{
+    background-color: rgb(10, 51, 235);
+    width: 20px;
+    height: 150px;
+    padding-top:60px;
+    border-radius: 50%;
+    -webkit-box-shadow: 5px 5px 15px 3px #000000; 
+    box-shadow: 5px 5px 15px 3px #000000;
+
+}
+
+.cis{
+    color: rgb(252, 249, 249);
+    font-family: "Times New Roman", Times, serif;
+    text-shadow: 2px 2px 3px black;
+}

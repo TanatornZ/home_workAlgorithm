@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap" rel="stylesheet">
+    <style>
+        .bg-nav {
+            background: rgb(233, 0, 0);
+            background: radial-gradient(circle, rgba(233, 0, 0, 1) 0%, rgba(75, 76, 78, 1) 100%);
+        }
+
+        .bg {
+            background-image: url('./35370.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 1000px;
+        }
+
+        * {
+            font-family: 'Sarabun', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+    <ul class="flex bg-nav">
+        <li>
+            <img class="logo" src="./aven.png" alt="">
+        </li>
+        <li>
+            <a class="p-3 text-white" href="./profile.html">หน้าแรก</a>
+        </li>
+        <li>
+            <a class="p-3 text-white " href="profiletailwind.html">หน้าประวัติส่วนตัวแบบ CSS Framework</a>
+        </li>
+        <li>
+            <a class="p-3 text-white " href="formjs.html">Form (Js)</a>
+        </li>
+        <li>
+            <a class="p-3 text-white active" href="formvue.html">Form (VueJs)</a>
+        </li>
+    </ul>
+    <div class="h-96 relative bg">
+        <div style="z-index:1;" class="absolute bg-black w-full h-full opacity-25"></div>
+        <div class="flex flex-col justify-center items-center h-3/4  ">
+            <h1 class="text-3xl mt-2 text-white z-10">คำนวณ BMI</h1>
+            
+            <form @submit.prevent="calculate()" class="z-10 mt-4" >
+                <input v-model="weight" required class="rounded-full p-3 ml-2 " type="number" placeholder="weight" >
+                <input v-model="height" required  class="rounded-full p-3 ml-2 " type="number" placeholder="height" >
+                <button type="submit" class="rounded-full p-3 bg-red-600 text-white w-40 ml-2 " >คำนวณ</button>
+            </form>
+
+            <h3 class="text-2xl text-white z-10 mt-6">ค่า BMI : <span>{{result}}</span></h3>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: () => {
+                return ({
+                    weight: 0,
+                    height: 0,
+                    result: 0
+                });
+            },
+            methods: {
+                calculate() {
+
+                    this.result = Number(this.weight) / ((Number(this.height)/100) ** 2)
+                    alert(this.result);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
